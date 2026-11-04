@@ -1,0 +1,17 @@
+Origin: Cast System
+Label: Cast System APT Repo
+Codename: stable
+Architectures: amd64 source
+Components: main
+Description: Cast System Hotel-IPTV - stable channel
+SignWith: 0FC0FFA28DB07FEE
+Tracking: minimal
+
+Origin: Cast System
+Label: Cast System APT Repo
+Codename: testing
+Architectures: amd64 source
+Components: main
+Description: Cast System Hotel-IPTV - testing channel (Annapertl .3 development)
+SignWith: 0FC0FFA28DB07FEE
+Tracking: minimal

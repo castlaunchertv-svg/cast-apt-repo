@@ -1,0 +1,28 @@
+Origin: Cast System
+Label: Cast System APT Repo
+Codename: testing
+Date: Wed, 04 Nov 2026 15:56:52 UTC
+Architectures: amd64
+Components: main
+Description: Cast System Hotel-IPTV - testing channel (Annapertl .3 development)
+MD5Sum:
+ 59730279c821e781a791c621a40e99e2 903 main/binary-amd64/Packages
+ d30020477fe76d01df03229381f7ed81 638 main/binary-amd64/Packages.gz
+ df5288d8a956ae70607ed2f563987c77 165 main/binary-amd64/Release
+ d41d8cd98f00b204e9800998ecf8427e 0 main/source/Sources
+ 7029066c27ac6f5ef18d660d5741979a 20 main/source/Sources.gz
+ 5eb0cbd639a99e7276ab33e58f7a9f5e 166 main/source/Release
+SHA1:
+ cb58a166ee07c17a20ec28a8c8ccdb2275c307ba 903 main/binary-amd64/Packages
+ 5fb0ce562a0f0f787861631e845ddbdc54278f3f 638 main/binary-amd64/Packages.gz
+ 01ffd2dd1c54560a5a0c6309b5856bd0cc0997bd 165 main/binary-amd64/Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/source/Sources
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/source/Sources.gz
+ 2b4752a0c49edea2023ec4c531170ce65a8b5f3d 166 main/source/Release
+SHA256:
+ 93132cc3af9b7fe418355507452489f9e6992162468a12b3fb7d4e62e2e37a28 903 main/binary-amd64/Packages
+ 4622b06ec8fbe39f48af68ffbf917ae6a20da8174e54a1be671430e9e7383ffd 638 main/binary-amd64/Packages.gz
+ 058c4779725b3f944d658b6a0ab9470a232044f7ed70803568b6dee56a25cc31 165 main/binary-amd64/Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/source/Sources
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/source/Sources.gz
+ a1d11e3b47a14bfba8b75acfda5c9a7c1128af0a5448f6d234bc0ad6222549fd 166 main/source/Release

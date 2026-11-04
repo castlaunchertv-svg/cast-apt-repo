@@ -1,0 +1,16 @@
+# reprepro working directories (regeneriert)
+db/
+lists/
+logs/
+
+# nicht aufgeräumte Uploads
+incoming/*.changes
+incoming/*.buildinfo
+
+# nie Private-Keys ins Repo
+*.priv
+*.key
+*.asc
+
+# Release.gpg und der public pubkey MÜSSEN rein — die machen den apt-Feed
+# signiert nutzbar. Deshalb kein globales *.gpg-Ignore.
