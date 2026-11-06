@@ -1,47 +1,24 @@
-Package: cast-meta
+Package: cast-castlauncher
 Version: 1.1.0-1
 Architecture: all
 Maintainer: Philipp Strasser <strasser.philipp@gmail.com>
-Installed-Size: 7
-Depends: castadmin (>= 1.1.0), cast-web (>= 1.1.0)
-Recommends: cast-castlauncher
+Installed-Size: 25
+Depends: curl, jq, ca-certificates
+Recommends: cast-web
 Homepage: https://cast-system.at
 Priority: optional
-Section: metapackages
-Filename: pool/main/c/cast-meta/cast-meta_1.1.0-1_all.deb
-Size: 1240
-SHA256: 2f86eab3c1a111b0a07ac2ad3b655c2dd0c24d0835b3e973e15a26b3b93efc0d
-SHA1: 998420a66daef11ad9d9581dd12d077c93dcab8a
-MD5sum: 0aa1519d21c6f3468cdc18ad53d76be4
-Description: Cast System - Komplettpaket (Meta)
- Installiert alle Core-Komponenten des Cast-System-Hotel-IPTV in einem Zug:
-   - castadmin: Rust-Headend (DVB, HLS, EPG, Catchup)
-   - cast-web: Web-Admin + PHP-APIs
+Section: net
+Filename: pool/main/c/cast-castlauncher/cast-castlauncher_1.1.0-1_all.deb
+Size: 4216
+SHA256: 358973e2790e2a7a52dfadd8737622d174d9fb90a0c719146a171afa9cd88ce3
+SHA1: 1b56e74ec96d4a01d8eb55b3dc2871efc9a51d21
+MD5sum: 428ef82a6dcbacd3904715eefe704e31
+Description: Cast System - CastLauncher APK Downloader
+ Downloader + Auto-Update-Mechanismus für die CastLauncher-Android-APKs.
  .
- Nach der Installation ist das System startbereit — die Hotel-spezifische
- Konfiguration (Sender, Kunden, Lizenzen) kommt per First-Boot-Wizard oder
- Hotel-git-Repo.
-
-Package: cast-web
-Version: 1.1.0-1
-Architecture: all
-Maintainer: Philipp Strasser <strasser.philipp@gmail.com>
-Installed-Size: 2218
-Depends: nginx-light | nginx, php-fpm, php-cli, php-curl, php-json | php (>= 8.0), php-mbstring, php-xml
-Recommends: castadmin
-Homepage: https://cast-system.at
-Priority: optional
-Section: web
-Filename: pool/main/c/cast-web/cast-web_1.1.0-1_all.deb
-Size: 372194
-SHA256: 42df1cab663eb63eed075f40168dff48b03f81471144a4ba496ae478f0c08d82
-SHA1: 0b521632b11ca80c0cdc022ab5eab5f8dd6f54b7
-MD5sum: ea1de4b31929a075d7dd0c8f7df9cd67
-Description: Cast System - Web-UI & PHP-APIs
- Statische Web-UI (Admin-Dashboard, Portal-Layouts, TV-Remote) und PHP-APIs
- (cgi-bin) für das Cast-System-Hotel-IPTV. Installiert nach /var/www/cast/.
+ Das Paket enthält nur Shell-Scripts und systemd-Units. Die APKs selbst
+ (~65 MB pro Variante) werden bei Installation und wöchentlich aus GitHub
+ Releases geholt und unter /var/www/cast/apk/ bereitgestellt.
  .
- Hotel-spezifische Daten (data/, kunden/, users.json) sind nicht Teil dieses
- Pakets — diese werden beim First-Boot-Wizard bzw. per Hotel-git-Repo
- eingespielt.
+ Kanal-Konfiguration (hotel vs. private) in /etc/default/cast-castlauncher.
 

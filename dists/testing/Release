@@ -1,27 +1,27 @@
 Origin: Cast System
 Label: Cast System APT Repo
 Codename: testing
-Date: Fri, 06 Nov 2026 15:37:58 UTC
+Date: Fri, 06 Nov 2026 15:48:24 UTC
 Architectures: amd64
 Components: main
 Description: Cast System Hotel-IPTV - testing channel (Annapertl .3 development)
 MD5Sum:
- 70cc3a4d491e5598727efa08d2d40fe3 1820 main/binary-amd64/Packages
- 3d26f253fa5f551ebeec517f9fa46b43 986 main/binary-amd64/Packages.gz
+ ddf80605f9202276c83fc1f54e3cde24 928 main/binary-amd64/Packages
+ cf43bbe8af27ba7f6fa43c9ae0ab4771 625 main/binary-amd64/Packages.gz
  df5288d8a956ae70607ed2f563987c77 165 main/binary-amd64/Release
  d41d8cd98f00b204e9800998ecf8427e 0 main/source/Sources
  7029066c27ac6f5ef18d660d5741979a 20 main/source/Sources.gz
  5eb0cbd639a99e7276ab33e58f7a9f5e 166 main/source/Release
 SHA1:
- 5fa47eed36a3e3a2bd2f534457453a0701945f16 1820 main/binary-amd64/Packages
- 2789fe09864afc024a10d0640205752667803aaa 986 main/binary-amd64/Packages.gz
+ c6b7aefb6feca2d3cff6f1aea9281b9a8224b28e 928 main/binary-amd64/Packages
+ a61822b6931f7c3c2017f3e0bc0e250cb35de2bc 625 main/binary-amd64/Packages.gz
  01ffd2dd1c54560a5a0c6309b5856bd0cc0997bd 165 main/binary-amd64/Release
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/source/Sources
  46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/source/Sources.gz
  2b4752a0c49edea2023ec4c531170ce65a8b5f3d 166 main/source/Release
 SHA256:
- 18aa179e3cd01deda2f608a848c9db6de410bb99754fe5b3fe51a044e7ecccf0 1820 main/binary-amd64/Packages
- f6ec4bf37d1bd3c73d5fd469c4d202386496bfacae3d7bded51badfe247362f6 986 main/binary-amd64/Packages.gz
+ b8e3b4d42e7065b816bb0105340bc2e951e3b7ab8474077d91510421e080a074 928 main/binary-amd64/Packages
+ 24876025f05e6ac21d2ddc9a9a1a12c4d82c2c850ccab9d53e076e2aadb95f5b 625 main/binary-amd64/Packages.gz
  058c4779725b3f944d658b6a0ab9470a232044f7ed70803568b6dee56a25cc31 165 main/binary-amd64/Release
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/source/Sources
  59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/source/Sources.gz
