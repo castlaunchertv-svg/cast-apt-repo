@@ -56,7 +56,23 @@ jobs:
             echo "name=testing" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Ingest .deb files
+      - name: Rebuild reprepro DB from pool/ (idempotent)
+        env:
+          CHANNEL: ${{ steps.channel.outputs.name }}
+        run: |
+          shopt -s nullglob globstar
+          # reprepro-DB wird per .gitignore nicht persistiert → bei jedem Run
+          # leer. Darum: alle existierenden pool-.debs neu einlesen, damit
+          # dists/$CHANNEL/Packages nicht nur die incoming-Pakete kennt.
+          # reprepro schreibt nur die HÖCHSTE Version pro Paket in Packages,
+          # alte Versionen bleiben physisch im pool/ für Downgrades.
+          for deb in pool/main/**/*.deb; do
+            echo "=== rescan: $deb ==="
+            reprepro --ignore=wrongdistribution --ignore=missingfield \
+              includedeb "$CHANNEL" "$deb" || echo "  (already current)"
+          done
+
+      - name: Ingest new .deb files from incoming/
         env:
           CHANNEL: ${{ steps.channel.outputs.name }}
         run: |
@@ -68,8 +84,7 @@ jobs:
             reprepro --ignore=wrongdistribution includedeb "$CHANNEL" "$deb"
           done
           if [ $found -eq 0 ]; then
-            echo "Keine .debs in incoming/ — nichts zu tun."
-            exit 0
+            echo "Keine neuen .debs in incoming/ — nur Rescan."
           fi
 
       - name: Move ingested .debs out of incoming
