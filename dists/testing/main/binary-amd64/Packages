@@ -1,5 +1,5 @@
 Package: cast-castlauncher
-Version: 1.1.0-1
+Version: 1.1.1-1
 Architecture: all
 Maintainer: Philipp Strasser <strasser.philipp@gmail.com>
 Installed-Size: 25
@@ -8,17 +8,18 @@ Recommends: cast-web
 Homepage: https://cast-system.at
 Priority: optional
 Section: net
-Filename: pool/main/c/cast-castlauncher/cast-castlauncher_1.1.0-1_all.deb
-Size: 4216
-SHA256: 358973e2790e2a7a52dfadd8737622d174d9fb90a0c719146a171afa9cd88ce3
-SHA1: 1b56e74ec96d4a01d8eb55b3dc2871efc9a51d21
-MD5sum: 428ef82a6dcbacd3904715eefe704e31
+Filename: pool/main/c/cast-castlauncher/cast-castlauncher_1.1.1-1_all.deb
+Size: 4414
+SHA256: be8d20123163e45de3900fde2c88c419e7415e78bfa570f5eaa0eb77dbd77de9
+SHA1: b16d011b26df030b1534d303f392526082dfedcb
+MD5sum: 34a7b8256ef2859bfa0544628edbac8b
 Description: Cast System - CastLauncher APK Downloader
  Downloader + Auto-Update-Mechanismus für die CastLauncher-Android-APKs.
  .
  Das Paket enthält nur Shell-Scripts und systemd-Units. Die APKs selbst
- (~65 MB pro Variante) werden bei Installation und wöchentlich aus GitHub
- Releases geholt und unter /var/www/cast/apk/ bereitgestellt.
+ (~65 MB pro Variante) werden bei Installation und wöchentlich aus den
+ castlauncher-* GitHub Releases von castlaunchertv-svg/cast-apt-repo
+ (public) geholt und unter /var/www/cast/apk/ bereitgestellt.
  .
  Kanal-Konfiguration (hotel vs. private) in /etc/default/cast-castlauncher.
 
