@@ -1,39 +1,41 @@
 Package: cast-first-boot-wizard
-Version: 1.1.0-1
+Version: 1.2.0-1
 Architecture: all
 Maintainer: Philipp Strasser <strasser.philipp@gmail.com>
-Installed-Size: 21
-Depends: whiptail, iproute2, passwd, systemd
+Installed-Size: 28
+Depends: whiptail, iproute2, passwd, systemd, netplan.io, gdisk, parted, e2fsprogs, util-linux, openssh-client, git, ca-certificates, cloud-init
 Homepage: https://cast-system.at
 Priority: optional
 Section: admin
-Filename: pool/main/c/cast-first-boot-wizard/cast-first-boot-wizard_1.1.0-1_all.deb
-Size: 4400
-SHA256: 37872583c55aff9e5f5615aee70ecbe53589f7b172ff4665eb81187b4153a5d4
-SHA1: f384a94b58d9c745e310d05c36230db9574aa47a
-MD5sum: de6827c64dc2c4829ef5ee5afbfdff80
+Filename: pool/main/c/cast-first-boot-wizard/cast-first-boot-wizard_1.2.0-1_all.deb
+Size: 7496
+SHA256: 6b8254c74bb6f646b059c2a27e3b5b44a14258d3ddbf0373040db954d78d0263
+SHA1: 9336c4de6b02c5c6635cf23671c98f97a6be64c0
+MD5sum: 13928dc31cb41c306658a14e24d18e61
 Description: Cast System - First-Boot TUI Setup-Wizard
  Interaktiver whiptail-TUI-Wizard der beim ersten Boot auf TTY1 läuft und
- das System hotel-spezifisch konfiguriert (Hotel-Slug, Hostname, Passwort,
- Netzwerk, Platten).
+ das System hotel-spezifisch konfiguriert: Hotel-Slug, Hostname, Passwort,
+ Netzwerk (DHCP oder statische IP via netplan), Timeshift/Catchup-Platte
+ (optional Formatierung als ext4 Label CastData) und Hotel-git-Repo-Clone
+ (ed25519 Deploy-Key).
  .
  Wird vom CastOS-Autoinstaller aktiviert und entfernt sich selbst nach
  erfolgreichem Setup.
 
 Package: cast-meta
-Version: 1.1.1-1
+Version: 1.1.2-1
 Architecture: all
 Maintainer: Philipp Strasser <strasser.philipp@gmail.com>
 Installed-Size: 7
-Depends: castadmin (>= 1.1.0), cast-web (>= 1.1.0), cast-castlauncher (>= 1.1.1), cast-first-boot-wizard (>= 1.1.0)
+Depends: castadmin (>= 1.1.0), cast-web (>= 1.1.0), cast-castlauncher (>= 1.1.1), cast-first-boot-wizard (>= 1.2.0)
 Homepage: https://cast-system.at
 Priority: optional
 Section: metapackages
-Filename: pool/main/c/cast-meta/cast-meta_1.1.1-1_all.deb
-Size: 1330
-SHA256: c7e0e57c5b27456b980e0527a354ce30fd762d4bf8f3de83e939ed7757129f05
-SHA1: a8778a9cc40c141952eae44b312ffa4711ff4bba
-MD5sum: 4c8842ccbb26e391cc5ccce552596686
+Filename: pool/main/c/cast-meta/cast-meta_1.1.2-1_all.deb
+Size: 1420
+SHA256: 1eb0285bfe80e2677217890d70fe231a43acacdb9a2d2f1a8700ce5bc6e1ef1d
+SHA1: d26458d64fe6bddca4e2e43281be42015c97dd79
+MD5sum: f9ff9dfaa22945ed7024e386c7a56899
 Description: Cast System - Komplettpaket (Meta)
  Installiert alle Core-Komponenten des Cast-System-Hotel-IPTV in einem Zug:
    - castadmin: Rust-Headend (DVB, HLS, EPG, Catchup)
