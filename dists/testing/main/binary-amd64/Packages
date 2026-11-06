@@ -23,6 +23,31 @@ Description: Cast System - CastLauncher APK Downloader
  .
  Kanal-Konfiguration (hotel vs. private) in /etc/default/cast-castlauncher.
 
+Package: cast-dddvb-dkms
+Version: 0.9.42-1
+Architecture: all
+Maintainer: Philipp Strasser <strasser.philipp@gmail.com>
+Installed-Size: 4738
+Depends: dkms (>= 2.8), linux-headers-generic | linux-headers-amd64 | linux-headers, make, gcc
+Homepage: https://github.com/DigitalDevices/dddvb
+Priority: optional
+Section: kernel
+Filename: pool/main/c/cast-dddvb-dkms/cast-dddvb-dkms_0.9.42-1_all.deb
+Size: 1242050
+SHA256: 113ceed07ccd1a0518c764b716f315b30e210c46157cca4f5876375a0d50990b
+SHA1: 8359929574a892a6113e80a35f8e0cbb493506aa
+MD5sum: eecc7ee3e52677a940389767090dccca
+Description: Cast System - Digital Devices DVB driver (DKMS)
+ ddbridge Treiber für Digital-Devices DVB-S2-Karten (Cine S2, MAX S8,
+ Octopus, Octonet) als DKMS-Paket aus upstream Tag 0.9.42.
+ .
+ DKMS kompiliert die Module gegen den jeweils laufenden Kernel; nach einem
+ Kernel-Upgrade werden die Treiber automatisch neu gebaut.
+ .
+ Installiert u.a.: ddbridge, dvb-core, stv0910, mxl5xx, cxd2843 und weitere
+ Frontends. Das in-tree ddbridge-Modul wird durch /etc/modprobe.d/
+ cast-dddvb.conf geblacklistet.
+
 Package: cast-first-boot-wizard
 Version: 1.2.0-1
 Architecture: all
@@ -47,28 +72,76 @@ Description: Cast System - First-Boot TUI Setup-Wizard
  Wird vom CastOS-Autoinstaller aktiviert und entfernt sich selbst nach
  erfolgreichem Setup.
 
-Package: cast-meta
-Version: 1.1.2-1
+Package: cast-headend-dvb
+Version: 1.0.0-1
 Architecture: all
 Maintainer: Philipp Strasser <strasser.philipp@gmail.com>
 Installed-Size: 7
-Depends: castadmin (>= 1.1.0), cast-web (>= 1.1.0), cast-castlauncher (>= 1.1.1), cast-first-boot-wizard (>= 1.2.0)
+Depends: cast-dddvb-dkms (>= 0.9.42), linux-headers-generic, linux-modules-extra-generic, dvb-tools, v4l-utils, libdvbcsa1
 Homepage: https://cast-system.at
 Priority: optional
 Section: metapackages
-Filename: pool/main/c/cast-meta/cast-meta_1.1.2-1_all.deb
-Size: 1420
-SHA256: 1eb0285bfe80e2677217890d70fe231a43acacdb9a2d2f1a8700ce5bc6e1ef1d
-SHA1: d26458d64fe6bddca4e2e43281be42015c97dd79
-MD5sum: f9ff9dfaa22945ed7024e386c7a56899
+Filename: pool/main/c/cast-headend-dvb/cast-headend-dvb_1.0.0-1_all.deb
+Size: 1266
+SHA256: 42e95ef66de858ef6d4c1c051330f7f152cab867177dcedf38fe4b472b74773f
+SHA1: 48814e5d95ad24d8fafaf1331afa8b5db1fe863c
+MD5sum: 75764797364fa6da2e366db97ca35b34
+Description: Cast System - DVB-Headend Hardware-Stack (Meta)
+ Zieht alles was ein CastOS-Hotel-Server für DVB-S2-Empfang braucht:
+   - cast-dddvb-dkms: Digital-Devices Treiber via DKMS
+   - linux-headers-generic: für DKMS-Builds nach Kernel-Updates
+   - linux-modules-extra-generic: zusätzliche DVB-Treiber für Mix-Hardware
+   - dvb-tools / v4l-utils: dvbv5-zap, dvb-fe-tool zum Debuggen
+   - libdvbcsa1: Software-CSA-Descrambler für CAM/Softcam
+
+Package: cast-meta
+Version: 1.2.0-1
+Architecture: all
+Maintainer: Philipp Strasser <strasser.philipp@gmail.com>
+Installed-Size: 7
+Depends: castadmin (>= 1.1.0), cast-web (>= 1.1.0), cast-castlauncher (>= 1.1.1), cast-first-boot-wizard (>= 1.2.0), cast-headend-dvb (>= 1.0.0), cast-oscam (>= 2.24.11)
+Homepage: https://cast-system.at
+Priority: optional
+Section: metapackages
+Filename: pool/main/c/cast-meta/cast-meta_1.2.0-1_all.deb
+Size: 1738
+SHA256: 0c15deae9bf8ad05d7b20cf2314843420d9d7a00c27788cc61bc89b54c0f2eb5
+SHA1: fc964ef75c0fd2be022eb0a077545402d2eee7e9
+MD5sum: 24fc5c67d47218f3f8bf4e2e792a4803
 Description: Cast System - Komplettpaket (Meta)
  Installiert alle Core-Komponenten des Cast-System-Hotel-IPTV in einem Zug:
    - castadmin: Rust-Headend (DVB, HLS, EPG, Catchup)
    - cast-web: Web-Admin + PHP-APIs
+   - cast-castlauncher: APK-Downloader für die Kunden-Boxen
+   - cast-first-boot-wizard: TTY1-Wizard beim ersten Boot
+   - cast-headend-dvb: Digital-Devices DVB-Treiber (DKMS) + v4l-Tools
+   - cast-oscam: OSCam Softcam-Server-Binary (Config pro Hotel aus git)
  .
  Nach der Installation ist das System startbereit — die Hotel-spezifische
- Konfiguration (Sender, Kunden, Lizenzen) kommt per First-Boot-Wizard oder
- Hotel-git-Repo.
+ Konfiguration (Sender, Kunden, Lizenzen, OSCam-Config) kommt per
+ First-Boot-Wizard oder Hotel-git-Repo.
+
+Package: cast-oscam
+Version: 2.24.11+cast1-1
+Architecture: amd64
+Maintainer: Philipp Strasser <strasser.philipp@gmail.com>
+Installed-Size: 1361
+Depends: libc6 (>= 2.34), libpcsclite1 (>= 1.0.0), libssl3 (>= 3.0.0~~alpha1), pcscd, libccid, adduser
+Homepage: https://cast-system.at
+Priority: optional
+Section: net
+Filename: pool/main/c/cast-oscam/cast-oscam_2.24.11+cast1-1_amd64.deb
+Size: 697414
+SHA256: 9aa760c30fccbc6a3facb94e8afdd3513eba47d58f874ecdefbbb5f6562bddfb
+SHA1: 1efea568384f8b79c09febafcac2cee725157d64
+MD5sum: 93d99b5f52730900046c2218c892126d
+Description: Cast System - OSCam Softcam Server (Binary only)
+ OSCam 2.24.11-11849 (Build 2024-11-14, pcsc-enabled) als Binary-Paket für
+ CastOS Hotel-Server. Das Paket liefert NUR die Binary + systemd-Unit; die
+ Config pro Hotel kommt aus dem hotel-git-Repo nach /etc/oscam/.
+ .
+ Ohne Config startet OSCam nicht — der systemd-Service bleibt dann im
+ Failed-State bis /etc/oscam/oscam.conf existiert.
 
 Package: cast-web
 Version: 1.1.0-1
