@@ -29,9 +29,10 @@ jobs:
   publish:
     runs-on: ubuntu-24.04
     steps:
-      - name: Checkout cast-apt-repo
+      - name: Checkout cast-apt-repo (always HEAD of main)
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
 
       - name: Install reprepro + gpg
@@ -89,7 +90,14 @@ jobs:
             exit 0
           fi
           git commit -m "apt: publish $(ls archive/ | tail -5 | tr '\n' ' ') to ${{ steps.channel.outputs.name }}"
-          git push
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              echo "push ok on attempt $attempt"; exit 0
+            fi
+            echo "push rejected (attempt $attempt) — rebase on origin/main and retry"
+            git pull --rebase origin main
+          done
+          echo "push failed after 5 attempts"; exit 1
 
       - name: Build Pages artifact
         uses: actions/upload-pages-artifact@v3
