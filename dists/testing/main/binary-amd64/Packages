@@ -1,25 +1,45 @@
-Package: cast-castlauncher
+Package: cast-first-boot-wizard
+Version: 1.1.0-1
+Architecture: all
+Maintainer: Philipp Strasser <strasser.philipp@gmail.com>
+Installed-Size: 21
+Depends: whiptail, iproute2, passwd, systemd
+Homepage: https://cast-system.at
+Priority: optional
+Section: admin
+Filename: pool/main/c/cast-first-boot-wizard/cast-first-boot-wizard_1.1.0-1_all.deb
+Size: 4400
+SHA256: 37872583c55aff9e5f5615aee70ecbe53589f7b172ff4665eb81187b4153a5d4
+SHA1: f384a94b58d9c745e310d05c36230db9574aa47a
+MD5sum: de6827c64dc2c4829ef5ee5afbfdff80
+Description: Cast System - First-Boot TUI Setup-Wizard
+ Interaktiver whiptail-TUI-Wizard der beim ersten Boot auf TTY1 läuft und
+ das System hotel-spezifisch konfiguriert (Hotel-Slug, Hostname, Passwort,
+ Netzwerk, Platten).
+ .
+ Wird vom CastOS-Autoinstaller aktiviert und entfernt sich selbst nach
+ erfolgreichem Setup.
+
+Package: cast-meta
 Version: 1.1.1-1
 Architecture: all
 Maintainer: Philipp Strasser <strasser.philipp@gmail.com>
-Installed-Size: 25
-Depends: curl, jq, ca-certificates
-Recommends: cast-web
+Installed-Size: 7
+Depends: castadmin (>= 1.1.0), cast-web (>= 1.1.0), cast-castlauncher (>= 1.1.1), cast-first-boot-wizard (>= 1.1.0)
 Homepage: https://cast-system.at
 Priority: optional
-Section: net
-Filename: pool/main/c/cast-castlauncher/cast-castlauncher_1.1.1-1_all.deb
-Size: 4414
-SHA256: be8d20123163e45de3900fde2c88c419e7415e78bfa570f5eaa0eb77dbd77de9
-SHA1: b16d011b26df030b1534d303f392526082dfedcb
-MD5sum: 34a7b8256ef2859bfa0544628edbac8b
-Description: Cast System - CastLauncher APK Downloader
- Downloader + Auto-Update-Mechanismus für die CastLauncher-Android-APKs.
+Section: metapackages
+Filename: pool/main/c/cast-meta/cast-meta_1.1.1-1_all.deb
+Size: 1330
+SHA256: c7e0e57c5b27456b980e0527a354ce30fd762d4bf8f3de83e939ed7757129f05
+SHA1: a8778a9cc40c141952eae44b312ffa4711ff4bba
+MD5sum: 4c8842ccbb26e391cc5ccce552596686
+Description: Cast System - Komplettpaket (Meta)
+ Installiert alle Core-Komponenten des Cast-System-Hotel-IPTV in einem Zug:
+   - castadmin: Rust-Headend (DVB, HLS, EPG, Catchup)
+   - cast-web: Web-Admin + PHP-APIs
  .
- Das Paket enthält nur Shell-Scripts und systemd-Units. Die APKs selbst
- (~65 MB pro Variante) werden bei Installation und wöchentlich aus den
- castlauncher-* GitHub Releases von castlaunchertv-svg/cast-apt-repo
- (public) geholt und unter /var/www/cast/apk/ bereitgestellt.
- .
- Kanal-Konfiguration (hotel vs. private) in /etc/default/cast-castlauncher.
+ Nach der Installation ist das System startbereit — die Hotel-spezifische
+ Konfiguration (Sender, Kunden, Lizenzen) kommt per First-Boot-Wizard oder
+ Hotel-git-Repo.
 

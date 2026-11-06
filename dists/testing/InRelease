@@ -4,44 +4,44 @@ Hash: SHA512
 Origin: Cast System
 Label: Cast System APT Repo
 Codename: testing
-Date: Fri, 06 Nov 2026 16:01:49 UTC
+Date: Fri, 06 Nov 2026 16:44:53 UTC
 Architectures: amd64
 Components: main
 Description: Cast System Hotel-IPTV - testing channel (Annapertl .3 development)
 MD5Sum:
- 466b5c732f13f538098fcae3012928b5 994 main/binary-amd64/Packages
- e224436262c6089024027d4a6fdbfff2 655 main/binary-amd64/Packages.gz
+ 5779a54675b84448f90ad468c7438dd4 1771 main/binary-amd64/Packages
+ 050622d4925ac3ea05fa219cbc0687d6 963 main/binary-amd64/Packages.gz
  df5288d8a956ae70607ed2f563987c77 165 main/binary-amd64/Release
  d41d8cd98f00b204e9800998ecf8427e 0 main/source/Sources
  7029066c27ac6f5ef18d660d5741979a 20 main/source/Sources.gz
  5eb0cbd639a99e7276ab33e58f7a9f5e 166 main/source/Release
 SHA1:
- bcdd9c830d1eba8b214fbc1e5f3d55003f452775 994 main/binary-amd64/Packages
- f190d17e6eb76d4642e845423a55846a39a2e18e 655 main/binary-amd64/Packages.gz
+ eb83a3c6d63963b73c5fea409c7a78ff425ef06a 1771 main/binary-amd64/Packages
+ 06d4a5522dcdb68f95458118177d1856c67ad410 963 main/binary-amd64/Packages.gz
  01ffd2dd1c54560a5a0c6309b5856bd0cc0997bd 165 main/binary-amd64/Release
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/source/Sources
  46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/source/Sources.gz
  2b4752a0c49edea2023ec4c531170ce65a8b5f3d 166 main/source/Release
 SHA256:
- 26dbe8c619b00dc2d3c24ded8cc3a039f7ca4b702c54f79ec43c395b25e54410 994 main/binary-amd64/Packages
- 86401e0b6d2b845bba511353b09364dc10f2dadd30496fa9d4a7610c0ed56be9 655 main/binary-amd64/Packages.gz
+ 20e596155204a49e98e1c0e5915f2441e18748a2a46c84fc222c1fc251541bcd 1771 main/binary-amd64/Packages
+ 9044a487868c95ab35901f6fbd6c1b04241a75e477b2c99b4d1ff1b0c66936df 963 main/binary-amd64/Packages.gz
  058c4779725b3f944d658b6a0ab9470a232044f7ed70803568b6dee56a25cc31 165 main/binary-amd64/Release
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/source/Sources
  59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/source/Sources.gz
  a1d11e3b47a14bfba8b75acfda5c9a7c1128af0a5448f6d234bc0ad6222549fd 166 main/source/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEx6M14A0utXDqedeED8D/oo2wf+4FAmrt+e0ACgkQD8D/oo2w
-f+5LkQ/+JnIBLCpT5UQSzTmm85KM/vT20KHd7ohBWcaYFzpaNh+rONcgPjK/1Tt8
-UXLt8m2WrZaQH7xIsh4PrN98+IU2uHvhHShv5qaEp2uaXSMIkl5EHSqVyn6GPfUq
-DDCDvzf96up7P2UHqST6DgbLxHVKUGw2+otsMPTHI0Bh1jjdUpwc+h92KxNIVAbg
-mGTb7jUYTF5/HEo+Z2x4dRa0XPMMQfFzWDQtqbZ5aaDklfypHNjvHuJvF3HnElMJ
-vEqX5tPPYz6nh+AJnux7eo9bpxFwIBRSgM1etkWsqRKwE3SLIe+tn5mtlqotdR7F
-zs4DyX3ceEi8NJCbXflJgXD8JEq1ua8bHo3pRsDW0VFJEhrE2cond0gUk2QF0fYJ
-j70GN3WO+TU+xOcCYpVKfTY4Bl+XOyXgzV+5bNW+HkGSJi5t3y7C64+c0K8Pd3Du
-ICZ4+FaMd5xYHHBwmOkDbQfJxgQQ1j/10T+BMUJEqBSvbeDp/DKMdUaDRZyU2fUg
-aV5ObyoBIJ2TZcYZL+5AWybbmpYGKZuJzi0CJ861Vk5LhjEx17gRSOgqTMOdOA6l
-db8uqnsRloPGam21xTEPXXFgJ3mSeFblv1DuAtagpMbdFbCPg/Jz+joQAm36X4WQ
-GeOxsaSSi/XTU///b/vmSr9GIExezwqclybgdMScDewWBjGp+6M=
-=biYT
+iQIzBAEBCgAdFiEEx6M14A0utXDqedeED8D/oo2wf+4FAmruBAUACgkQD8D/oo2w
+f+7r3Q/+I8f54nsfWDgGnu3v+Rn6CAL9maH8P/ifYqyK9y1sUM+WXnZytsTGRj0x
+iNXEWuovJh1T3pseIisUGEZYYQ+WLA4PhBTs4A/mwUA8gwKcxt2cnsu8EWb5B9Qm
+HdQ83+BpNFRBoEnRCFnyaPYrnpq1XvJQumeaoksD9Aq7W4A4f0uAY1XtINNPhBbe
+cO+4CQJtqE2J/7S4QNbPkKcosxPeVMmA3c09a18qQ5Ts5D3q30qaIQ8S74cNszU1
+Hq6TCKz8yV1CeRcTwVu5EGvi9Sx0NAJRjxaUH3rORzzPmnV+iLDlodRpN8ZROLmN
+IPMbnf5amFYVagDcjpqvA9VkGUI8eqMy7x2Lec69XMV2te+Zt9bxeXZHU9tTmI2i
+8cA26g9RKvM2b4jGJlgq1xFvzHAtUYS5bjJx7hJ4aqI0NNF9JGCofD/I/ZYHDqtK
+2aYEaEnu8KjnKLPuNlfRJsHmJ8wUQn+z1OVmlq9uiub0WWmSjRF2J3SEsdMtF0nK
+q4DIDFQ1coFoMTBhf7uDZRH02eA+f5nvUZrTE8Wt+BwVC+MtwtBzA3ATPSYlVAao
+vI0aotLMp8Wt1FFF51Xe1CRHyIzC/w85qymOMIjVww+u3rRF2ZJzlOL7SyODqksW
+o1Gs3qTOGjLB3Cgfm+Ni7cCRePk7YYOXdyUl5uwH7+Rw9VCaQng=
+=wUvb
 -----END PGP SIGNATURE-----
